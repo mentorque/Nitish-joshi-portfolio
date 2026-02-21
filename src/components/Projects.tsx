@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Github, Zap, BookOpen, MessageCircle } from "lucide-react";
 
@@ -61,7 +62,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-24 px-4 bg-gray-800">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
+        <ScrollReveal className="text-center mb-16" variant="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             Featured <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Projects</span>
           </h2>
@@ -69,9 +70,9 @@ const Projects = () => {
             Full-stack and educational projects demonstrating expertise in Java, Spring Boot, React,
             and browser-based applications.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="relative">
+        <ScrollReveal className="relative" variant="fade-up" delay={80}>
           <Carousel
             opts={{
               align: "start",
@@ -83,7 +84,7 @@ const Projects = () => {
               {projects.map((project, index) => (
                 <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/2">
                   <div className="h-full min-h-[600px]">
-                    <Card className="card-gradient border-primary/20 shadow-elevated hover:shadow-lg transition-all group overflow-hidden h-full flex flex-col">
+                    <Card className="card-premium card-gradient border-primary/20 group overflow-hidden h-full flex flex-col">
                     <CardHeader className="pb-4">
                       <div className="flex items-start gap-4">
                         <div className={`p-3 rounded-xl ${getGradientClasses(project.gradient)} text-white shadow-lg group-hover:scale-110 transition-transform`}>
@@ -169,11 +170,11 @@ const Projects = () => {
               />
             ))}
           </div>
-        </div>
+        </ScrollReveal>
 
         {/* Call to Action */}
-        <div className="text-center mt-16">
-          <Card className="card-gradient border-primary/20 shadow-elevated max-w-2xl mx-auto">
+        <ScrollReveal className="text-center mt-16" variant="scale-in" delay={120}>
+          <Card className="card-premium card-gradient border-primary/20 max-w-2xl mx-auto">
             <CardContent className="p-6 md:p-8">
               <h3 className="text-xl md:text-2xl font-bold mb-4 text-center">
                 Interested in <span className="text-gradient">Collaboration?</span>
@@ -191,7 +192,7 @@ const Projects = () => {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

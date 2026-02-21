@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Mail, Phone, MapPin, Linkedin, Github, ExternalLink } from "lucide-react";
 
 const Contact = () => {
@@ -44,7 +45,7 @@ const Contact = () => {
   return (
     <section id="contact" className="py-24 px-4 bg-gray-800">
       <div className="container mx-auto max-w-4xl">
-        <div className="text-center mb-16">
+        <ScrollReveal className="text-center mb-16" variant="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             Let's <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Connect</span>
           </h2>
@@ -52,15 +53,15 @@ const Contact = () => {
             Backend Software Developer with 1+ years of experience in Java-based RESTful systems and Spring Boot.
             Open to new opportunities and exciting projects.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="grid lg:grid-cols-2 gap-8">
-          {/* Contact Information */}
-          <Card className="card-gradient border-primary/20 shadow-elevated">
-            <CardContent className="p-4 md:p-8">
+        <div className="grid lg:grid-cols-2 gap-8 items-stretch">
+          <ScrollReveal variant="fade-up" delay={80} className="h-full">
+          <Card className="card-premium card-gradient border-primary/20 h-full flex flex-col">
+            <CardContent className="p-4 md:p-8 flex-1 flex flex-col">
               <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gradient text-center lg:text-left">Get In Touch</h3>
               
-              <div className="space-y-6">
+              <div className="space-y-6 flex-1">
                 {contactInfo.map((contact, index) => (
                   <div key={index} className="flex items-center gap-4 group">
                     <div className={`p-3 rounded-lg ${contact.primary ? 'bg-primary/20 text-primary' : 'bg-secondary text-secondary-foreground'} group-hover:scale-110 transition-transform`}>
@@ -113,13 +114,14 @@ const Contact = () => {
               </div>
             </CardContent>
           </Card>
+          </ScrollReveal>
 
-          {/* Availability & Status */}
-          <Card className="card-gradient border-primary/20 shadow-elevated">
-            <CardContent className="p-4 md:p-8">
+          <ScrollReveal variant="fade-up" delay={120} className="h-full">
+          <Card className="card-premium card-gradient border-primary/20 h-full flex flex-col">
+            <CardContent className="p-4 md:p-8 flex-1 flex flex-col">
               <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gradient text-center lg:text-left">Current Status</h3>
               
-              <div className="space-y-6">
+              <div className="space-y-6 flex-1 flex flex-col">
                 <div className="p-4 bg-primary/10 border border-primary/20 rounded-lg">
                   <div className="flex items-center gap-3 mb-2">
                     <div className="w-3 h-3 bg-primary rounded-full animate-pulse"></div>
@@ -156,7 +158,7 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="pt-4">
+                <div className="pt-4 mt-auto">
                   <Button 
                     variant="gradient" 
                     className="w-full" 
@@ -171,6 +173,7 @@ const Contact = () => {
               </div>
             </CardContent>
           </Card>
+          </ScrollReveal>
         </div>
       </div>
     </section>

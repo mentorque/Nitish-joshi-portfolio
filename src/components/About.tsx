@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Code, Cloud, Database, Zap } from "lucide-react";
 
 const About = () => {
@@ -34,7 +35,7 @@ const About = () => {
   return (
     <section id="about" className="py-24 px-4 bg-gray-800">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
+        <ScrollReveal className="text-center mb-16" variant="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             About <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Me</span>
           </h2>
@@ -42,11 +43,10 @@ const About = () => {
             Backend Software Developer with 1+ years of experience contributing to Java-based RESTful systems and relational
             database-driven applications. Experienced in Spring Boot APIs, MySQL optimization, and resolving production issues.
           </p>
-        </div>
+        </ScrollReveal>
 
-        <div className="max-w-4xl mx-auto mb-16">
-          {/* Professional Summary */}
-          <Card className="card-gradient border-primary/20 shadow-elevated">
+        <ScrollReveal className="max-w-4xl mx-auto mb-16" variant="fade-up" delay={80}>
+          <Card className="card-premium card-gradient border-primary/20">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4 text-gradient">Professional Summary</h3>
               <div className="space-y-4 text-muted-foreground">
@@ -56,39 +56,39 @@ const About = () => {
               </div>
             </CardContent>
           </Card>
-        </div>
+        </ScrollReveal>
 
-        {/* Skills Grid */}
-        <div className="space-y-8">
+        <ScrollReveal className="space-y-8" variant="fade-up" delay={120}>
           <h3 className="text-3xl font-bold text-center">
             Technical <span className="text-gradient">Skills</span>
           </h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skillCategories.map((category, index) => (
-              <Card key={index} className="card-gradient border-primary/20 shadow-elevated hover:shadow-lg transition-all hover:scale-105 group">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="text-primary group-hover:text-accent transition-colors">
-                      {category.icon}
+              <ScrollReveal key={index} variant="scale-in" delay={160 + index * 60}>
+                <Card className="card-premium card-gradient border-primary/20 group h-full hover:scale-[1.02]">
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="text-primary group-hover:text-accent transition-colors">
+                        {category.icon}
+                      </div>
+                      <h4 className="font-bold text-lg">{category.title}</h4>
                     </div>
-                    <h4 className="font-bold text-lg">{category.title}</h4>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    {category.skills.map((skill, skillIndex) => (
-                      <Badge key={skillIndex} variant="secondary" className="text-xs">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                    <div className="flex flex-wrap gap-2">
+                      {category.skills.map((skill, skillIndex) => (
+                        <Badge key={skillIndex} variant="secondary" className="text-xs">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </ScrollReveal>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
 
-        {/* Core Concepts */}
-        <div className="mt-12 text-center">
+        <ScrollReveal className="mt-12 text-center" variant="fade-in" delay={200}>
           <h4 className="text-xl font-semibold mb-4 text-muted-foreground">Core Concepts</h4>
           <div className="flex flex-wrap justify-center gap-3">
             {["Agile/Scrum", "System Design", "Object-Oriented Design", "Data Structures & Algorithms", "RESTful APIs", "Layered Architecture", "Data Modeling"].map((concept, index) => (
@@ -97,7 +97,7 @@ const About = () => {
               </Badge>
             ))}
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );

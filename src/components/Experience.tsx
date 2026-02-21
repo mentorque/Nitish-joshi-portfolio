@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import ScrollReveal from "@/components/ScrollReveal";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import { Building2, MapPin, Calendar, TrendingUp } from "lucide-react";
 
@@ -58,7 +59,7 @@ const Experience = () => {
   return (
     <section id="experience" className="py-24 px-4 bg-gray-900">
       <div className="container mx-auto max-w-6xl">
-        <div className="text-center mb-16">
+        <ScrollReveal className="text-center mb-16" variant="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             Work <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Experience</span>
           </h2>
@@ -66,11 +67,12 @@ const Experience = () => {
             Building and maintaining backend systems, mentoring students, and delivering measurable impact
             through clean code and solid architecture.
           </p>
-        </div>
+        </ScrollReveal>
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <Card key={index} className="card-gradient border-primary/20 shadow-elevated hover:shadow-lg transition-all">
+            <ScrollReveal key={index} variant="fade-up" delay={index * 100}>
+              <Card className="card-premium card-gradient border-primary/20">
               <CardHeader className="pb-4">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                   <div className="flex items-center gap-4">
@@ -182,6 +184,7 @@ const Experience = () => {
                 </div>
               </CardContent>
             </Card>
+            </ScrollReveal>
           ))}
         </div>
       </div>

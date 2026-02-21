@@ -95,6 +95,79 @@ All colors MUST be HSL.
     transition: var(--transition-bounce);
   }
 
+  /* Premium card styling */
+  .card-premium {
+    background: linear-gradient(145deg, hsl(215 32% 10%), hsl(215 28% 8%));
+    border: 1px solid hsl(213 94% 68% / 0.12);
+    border-radius: 1rem;
+    box-shadow:
+      0 4px 6px -1px hsl(0 0% 0% / 0.2),
+      0 10px 25px -5px hsl(0 0% 0% / 0.25),
+      0 0 0 1px hsl(0 0% 100% / 0.03) inset,
+      0 20px 50px -20px hsl(213 94% 68% / 0.15);
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+                box-shadow 0.35s ease,
+                border-color 0.25s ease;
+  }
+
+  .card-premium:hover {
+    transform: translateY(-4px);
+    border-color: hsl(213 94% 68% / 0.22);
+    box-shadow:
+      0 20px 40px -15px hsl(0 0% 0% / 0.35),
+      0 0 0 1px hsl(0 0% 100% / 0.04) inset,
+      0 30px 60px -25px hsl(213 94% 68% / 0.25),
+      0 0 60px -20px hsl(213 94% 68% / 0.2);
+  }
+
+  /* Scroll reveal animations */
+  @keyframes reveal-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(32px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes reveal-fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes reveal-scale-in {
+    from {
+      opacity: 0;
+      transform: scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-reveal-fade-up {
+    animation: reveal-fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-reveal-fade-in {
+    animation: reveal-fade-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .animate-reveal-scale-in {
+    animation: reveal-scale-in 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .scroll-reveal-init {
+    opacity: 0;
+  }
+
   /* Custom Animations */
   @keyframes float {
     0%, 100% {

@@ -1,4 +1,5 @@
 import { ArrowDown } from 'lucide-react';
+import Plasma from '@/components/Plasma';
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -10,26 +11,21 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen flex items-center justify-center text-white relative overflow-hidden">
-      {/* Background Video */}
+      {/* Plasma background */}
       <div className="absolute inset-0 w-full h-full">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source
-            src="https://videos.pexels.com/video-files/1722882/1722882-uhd_2560_1440_25fps.mp4"
-            type="video/mp4"
-          />
-        </video>
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <Plasma
+          color="#6366f1"
+          speed={1}
+          direction="forward"
+          scale={1}
+          opacity={0.9}
+          mouseInteractive={true}
+        />
       </div>
-
+      {/* Dark overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/50"></div>
       {/* Enhanced overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
 
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="animate-fade-in">
