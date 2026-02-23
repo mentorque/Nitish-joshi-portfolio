@@ -3,10 +3,57 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { Github, Zap, BookOpen, MessageCircle } from "lucide-react";
+import { Github, Zap, BookOpen, MessageCircle, ShoppingCart, Bell, ExternalLink } from "lucide-react";
 
 const Projects = () => {
   const projects = [
+    {
+      title: "E-Commerce Platform (Real Users)",
+      description: "Medusa is a commerce platform with a built-in framework for customization that allows you to build custom commerce applications without reinventing core commerce logic. The framework and modules support advanced B2B or DTC commerce stores, marketplaces, distributor platforms, PoS systems, and similar solutions. All commerce modules are open-source and freely available on npm.",
+      icon: <ShoppingCart className="w-8 h-8" />,
+      achievements: [
+        {
+          metric: "Headless commerce architecture",
+          description: "API-first, frontend-agnostic design; modular carts, payments, inventory, shipping"
+        },
+        {
+          metric: "Production-ready use cases",
+          description: "Supports B2B, DTC, marketplaces, and POS; open-source extensibility used by real teams"
+        },
+        {
+          metric: "Full commerce lifecycle",
+          description: "Real checkout, order lifecycle, and user accounts; mapped to Amazon, Shopify, Walmart-scale primitives"
+        }
+      ],
+      technologies: ["TypeScript", "Node.js", "Express.js", "PostgreSQL", "Redis", "REST APIs"],
+      category: "E-Commerce",
+      gradient: "from-amber-500 to-orange-600",
+      githubUrl: "https://github.com/medusajs/medusa",
+      liveUrl: "https://demo.medusajs.com/us/account"
+    },
+    {
+      title: "Fault-Tolerant Notification System (Email/SMS/Push)",
+      description: "A highly reliable notification delivery system that handles retries, exponential backoff, dead-letter queues, and multi-channel notifications (email, SMS, push). Designed to simulate enterprise-scale messaging infrastructure.",
+      icon: <Bell className="w-8 h-8" />,
+      achievements: [
+        {
+          metric: "Event-driven architecture",
+          description: "Kafka-based messaging; retry with exponential backoff and dead-letter queue handling"
+        },
+        {
+          metric: "Multi-channel routing",
+          description: "Email, SMS, and push notification routing with failure monitoring dashboard"
+        },
+        {
+          metric: "High availability design",
+          description: "Resilient backend systems; mapped to Uber, LinkedIn, Swiggy, Netflix-scale infra"
+        }
+      ],
+      technologies: ["Java", "Spring Boot", "Kafka", "Redis", "PostgreSQL", "React", "Docker", "Kubernetes", "JUnit"],
+      category: "Backend / DevOps",
+      gradient: "from-emerald-500 to-teal-600",
+      githubUrl: "https://github.com/dileepkanumuri/Distributed-Async-Notification-System"
+    },
     {
       title: "Web-Based Educational Games for Computational Thinking",
       description: "Built three full-stack browser-based educational games by extending a Python codebase and implementing core gameplay logic, integrating frontend components with backend logic using Brython for browser-based execution. Designed parameter-driven multiple-choice logic with controlled distractor generation and state-based progression, and validated gameplay effectiveness through testing with 100+ school students (ages 6-12).",
@@ -60,8 +107,8 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-24 px-4 bg-gray-800">
-      <div className="container mx-auto max-w-6xl">
+    <section id="projects" className="section-contain py-24 px-4 sm:px-6 bg-gray-800">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <ScrollReveal className="text-center mb-16" variant="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             Featured <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Projects</span>
@@ -72,17 +119,20 @@ const Projects = () => {
           </p>
         </ScrollReveal>
 
-        <ScrollReveal className="relative" variant="fade-up" delay={80}>
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent className="-ml-2 md:-ml-4">
-              {projects.map((project, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/2">
+        <ScrollReveal className="relative" variant="fade-up" delay={40}>
+          <div className="relative w-full px-14 md:px-16">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+                duration: 35,
+                containScroll: "trimSnaps",
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-3">
+                {projects.map((project, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-3 basis-full md:basis-1/2 lg:basis-1/2">
                   <div className="h-full min-h-[600px]">
                     <Card className="card-premium card-gradient border-primary/20 group overflow-hidden h-full flex flex-col">
                     <CardHeader className="pb-4">
@@ -150,19 +200,28 @@ const Projects = () => {
                             Source Code
                           </a>
                         </Button>
+                        {"liveUrl" in project && project.liveUrl && (
+                          <Button variant="outline" size="sm" asChild className="w-full">
+                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="w-4 h-4" />
+                              Live Demo
+                            </a>
+                          </Button>
+                        )}
                       </div>
                     </CardContent>
                     </Card>
                   </div>
                 </CarouselItem>
               ))}
-            </CarouselContent>
-            <CarouselPrevious className="left-2 md:left-4" />
-            <CarouselNext className="right-2 md:right-4" />
-          </Carousel>
-          
+              </CarouselContent>
+              <CarouselPrevious className="absolute left-0 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full border-2 bg-background shadow-md hover:bg-background/90 z-10 [&_svg]:h-6 [&_svg]:w-6" />
+              <CarouselNext className="absolute right-0 top-1/2 -translate-y-1/2 h-12 w-12 rounded-full border-2 bg-background shadow-md hover:bg-background/90 z-10 [&_svg]:h-6 [&_svg]:w-6" />
+            </Carousel>
+          </div>
+
           {/* Mobile Navigation Dots */}
-          <div className="flex justify-center gap-2 mt-6 md:hidden">
+          <div className="flex justify-center gap-2 mt-4 md:hidden">
             {projects.map((_, index) => (
               <div
                 key={index}
@@ -173,7 +232,7 @@ const Projects = () => {
         </ScrollReveal>
 
         {/* Call to Action */}
-        <ScrollReveal className="text-center mt-16" variant="scale-in" delay={120}>
+        <ScrollReveal className="text-center mt-16" variant="scale-in" delay={60}>
           <Card className="card-premium card-gradient border-primary/20 max-w-2xl mx-auto">
             <CardContent className="p-6 md:p-8">
               <h3 className="text-xl md:text-2xl font-bold mb-4 text-center">

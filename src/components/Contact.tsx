@@ -31,20 +31,20 @@ const Contact = () => {
     {
       icon: <Linkedin className="w-5 h-5" />,
       label: "LinkedIn",
-      href: "https://www.linkedin.com/in/nitish-joshi",
+      href: "https://www.linkedin.com/in/nitishjoshi01/",
       color: "text-blue-500"
     },
     {
       icon: <Github className="w-5 h-5" />,
       label: "Github",
-      href: "https://github.com/nitishjoshi04",
+      href: "https://github.com/nitishjoshi00",
       color: "text-gray-300"
     }
   ];
 
   return (
-    <section id="contact" className="py-24 px-4 bg-gray-800">
-      <div className="container mx-auto max-w-4xl">
+    <section id="contact" className="section-contain py-24 px-4 sm:px-6 bg-gray-800">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <ScrollReveal className="text-center mb-16" variant="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             Let's <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Connect</span>
@@ -56,7 +56,7 @@ const Contact = () => {
         </ScrollReveal>
 
         <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-          <ScrollReveal variant="fade-up" delay={80} className="h-full">
+          <ScrollReveal variant="fade-up" delay={40} className="h-full">
           <Card className="card-premium card-gradient border-primary/20 h-full flex flex-col">
             <CardContent className="p-4 md:p-8 flex-1 flex flex-col">
               <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gradient text-center lg:text-left">Get In Touch</h3>
@@ -116,7 +116,7 @@ const Contact = () => {
           </Card>
           </ScrollReveal>
 
-          <ScrollReveal variant="fade-up" delay={120} className="h-full">
+          <ScrollReveal variant="fade-up" delay={60} className="h-full">
           <Card className="card-premium card-gradient border-primary/20 h-full flex flex-col">
             <CardContent className="p-4 md:p-8 flex-1 flex flex-col">
               <h3 className="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-gradient text-center lg:text-left">Current Status</h3>

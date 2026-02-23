@@ -24,8 +24,8 @@ npm run build
 
 - **Email:** nitishjoshi04@gmail.com  
 - **Phone:** +353 894 980 613  
-- **LinkedIn:** [linkedin.com/in/nitish-joshi](https://www.linkedin.com/in/nitish-joshi)  
-- **Github:** [github.com/nitishjoshi04](https://github.com/nitishjoshi04)  
+- **LinkedIn:** [linkedin.com/in/nitishjoshi01](https://www.linkedin.com/in/nitishjoshi01/)  
+- **Github:** [github.com/nitishjoshi00](https://github.com/nitishjoshi00)  
 
 Update the LinkedIn and Github URLs in the components if your profile URLs differ.
 # Nitish-joshi-portfolio

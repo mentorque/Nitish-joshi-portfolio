@@ -21,8 +21,8 @@ const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 bg-gray-800">
-      <div className="container mx-auto px-6">
+    <section id="education" className="section-contain py-24 px-4 sm:px-6 bg-gray-800">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <ScrollReveal className="text-center mb-16" variant="fade-up">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             Education
@@ -34,7 +34,7 @@ const Education = () => {
 
         <div className="max-w-4xl mx-auto space-y-8">
           {education.map((edu, index) => (
-            <ScrollReveal key={index} variant="fade-up" delay={index * 100}>
+            <ScrollReveal key={index} variant="fade-up" delay={index * 40}>
             <div className="card-premium bg-gray-900/80 rounded-xl p-8 border border-white/[0.06] backdrop-blur-sm">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
                 <div className="flex items-center gap-4 mb-4 md:mb-0">

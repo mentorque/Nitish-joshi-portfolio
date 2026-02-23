@@ -57,8 +57,8 @@ const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 px-4 bg-gray-900">
-      <div className="container mx-auto max-w-6xl">
+    <section id="experience" className="section-contain py-24 px-4 sm:px-6 bg-gray-900">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <ScrollReveal className="text-center mb-16" variant="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             Work <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Experience</span>
@@ -71,7 +71,7 @@ const Experience = () => {
 
         <div className="space-y-8">
           {experiences.map((exp, index) => (
-            <ScrollReveal key={index} variant="fade-up" delay={index * 100}>
+            <ScrollReveal key={index} variant="fade-up" delay={index * 40}>
               <Card className="card-premium card-gradient border-primary/20">
               <CardHeader className="pb-4">
                 <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">

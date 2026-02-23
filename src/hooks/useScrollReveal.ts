@@ -17,8 +17,8 @@ interface UseScrollRevealOptions {
 
 export function useScrollReveal({
   variant = "fade-up",
-  threshold = 0.1,
-  rootMargin = "0px 0px -40px 0px",
+  threshold = 0.05,
+  rootMargin = "0px 0px -120px 0px",
   once = true,
 }: UseScrollRevealOptions = {}) {
   const ref = useRef<HTMLDivElement>(null);
@@ -28,21 +28,28 @@ export function useScrollReveal({
     const el = ref.current;
     if (!el) return;
 
+    let rafId: number | null = null;
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          setRevealed(true);
-          if (once && el) {
-            observer.unobserve(el);
-          }
-        });
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          if (rafId !== null) cancelAnimationFrame(rafId);
+          rafId = requestAnimationFrame(() => {
+            setRevealed(true);
+            if (once && el) observer.unobserve(el);
+            rafId = null;
+          });
+          break;
+        }
       },
       { threshold, rootMargin }
     );
 
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      if (rafId !== null) cancelAnimationFrame(rafId);
+      observer.disconnect();
+    };
   }, [threshold, rootMargin, once]);
 
   return { ref, revealed, animationClass: ANIMATION_CLASS[variant] };

@@ -86,10 +86,13 @@ export const Plasma = ({
   direction = 'forward',
   scale = 1,
   opacity = 1,
-  mouseInteractive = true
+  mouseInteractive = true,
+  paused = false
 }) => {
   const containerRef = useRef(null);
   const mousePos = useRef({ x: 0, y: 0 });
+  const pausedRef = useRef(paused);
+  pausedRef.current = paused;
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -165,6 +168,10 @@ export const Plasma = ({
     let raf = 0;
     const t0 = performance.now();
     const loop = t => {
+      if (pausedRef.current) {
+        raf = requestAnimationFrame(loop);
+        return;
+      }
       let timeValue = (t - t0) * 0.001;
       if (direction === 'pingpong') {
         const pingpongDuration = 10;
@@ -195,7 +202,7 @@ export const Plasma = ({
         console.warn('Canvas already removed from container');
       }
     };
-  }, [color, speed, direction, scale, opacity, mouseInteractive]);
+  }, [color, speed, direction, scale, opacity, mouseInteractive, paused]);
 
   return <div ref={containerRef} className="plasma-container" />;
 };

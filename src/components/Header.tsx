@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-sm border-b border-gray-800">
-      <div className="container mx-auto px-6 py-4">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="text-xl font-bold text-white">
             Nitish Joshi
@@ -47,7 +47,7 @@ const Header = () => {
             <a href="tel:+353894980613" className="text-gray-300 hover:text-blue-400 transition-colors">
               <Phone size={18} />
             </a>
-            <a href="https://www.linkedin.com/in/nitish-joshi" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">
+            <a href="https://www.linkedin.com/in/nitishjoshi01/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">
               <Linkedin size={18} />
             </a>
           </div>
@@ -89,7 +89,7 @@ const Header = () => {
                 <a href="tel:+353894980613" className="text-gray-300 hover:text-blue-400 transition-colors">
                   <Phone size={18} />
                 </a>
-                <a href="https://www.linkedin.com/in/nitish-joshi" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">
+                <a href="https://www.linkedin.com/in/nitishjoshi01/" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-blue-400 transition-colors">
                   <Linkedin size={18} />
                 </a>
               </div>

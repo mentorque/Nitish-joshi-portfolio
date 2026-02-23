@@ -33,8 +33,8 @@ const About = () => {
   architecture, and scalable backend development.`;
 
   return (
-    <section id="about" className="py-24 px-4 bg-gray-800">
-      <div className="container mx-auto max-w-6xl">
+    <section id="about" className="section-contain py-24 px-4 sm:px-6 bg-gray-800">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6">
         <ScrollReveal className="text-center mb-16" variant="fade-up">
           <h2 className="text-4xl lg:text-5xl font-bold mb-6 text-white">
             About <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Me</span>
@@ -45,7 +45,7 @@ const About = () => {
           </p>
         </ScrollReveal>
 
-        <ScrollReveal className="max-w-4xl mx-auto mb-16" variant="fade-up" delay={80}>
+        <ScrollReveal className="max-w-4xl mx-auto mb-16" variant="fade-up" delay={40}>
           <Card className="card-premium card-gradient border-primary/20">
             <CardContent className="p-8">
               <h3 className="text-2xl font-bold mb-4 text-gradient">Professional Summary</h3>
@@ -58,14 +58,14 @@ const About = () => {
           </Card>
         </ScrollReveal>
 
-        <ScrollReveal className="space-y-8" variant="fade-up" delay={120}>
+        <ScrollReveal className="space-y-8" variant="fade-up" delay={60}>
           <h3 className="text-3xl font-bold text-center">
             Technical <span className="text-gradient">Skills</span>
           </h3>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {skillCategories.map((category, index) => (
-              <ScrollReveal key={index} variant="scale-in" delay={160 + index * 60}>
+              <ScrollReveal key={index} variant="scale-in" delay={80 + index * 30}>
                 <Card className="card-premium card-gradient border-primary/20 group h-full hover:scale-[1.02]">
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
@@ -88,7 +88,7 @@ const About = () => {
           </div>
         </ScrollReveal>
 
-        <ScrollReveal className="mt-12 text-center" variant="fade-in" delay={200}>
+        <ScrollReveal className="mt-12 text-center" variant="fade-in" delay={100}>
           <h4 className="text-xl font-semibold mb-4 text-muted-foreground">Core Concepts</h4>
           <div className="flex flex-wrap justify-center gap-3">
             {["Agile/Scrum", "System Design", "Object-Oriented Design", "Data Structures & Algorithms", "RESTful APIs", "Layered Architecture", "Data Modeling"].map((concept, index) => (

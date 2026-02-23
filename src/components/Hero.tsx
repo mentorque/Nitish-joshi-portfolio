@@ -1,7 +1,24 @@
+import { useState, useEffect, useRef } from 'react';
 import { ArrowDown } from 'lucide-react';
 import Plasma from '@/components/Plasma';
 
 const Hero = () => {
+  const [heroInView, setHeroInView] = useState(true);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        setHeroInView(entries[0]?.isIntersecting ?? true);
+      },
+      { threshold: 0.05, rootMargin: '0px' }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
   const scrollToAbout = () => {
     const element = document.getElementById('about');
     if (element) {
@@ -10,9 +27,9 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center text-white relative overflow-hidden">
-      {/* Plasma background */}
-      <div className="absolute inset-0 w-full h-full">
+    <section ref={sectionRef} className="min-h-screen flex items-center justify-center text-white relative overflow-hidden">
+      {/* Plasma background – pointer-events-none so scroll never gets stuck */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none">
         <Plasma
           color="#6366f1"
           speed={1}
@@ -20,14 +37,13 @@ const Hero = () => {
           scale={1}
           opacity={0.9}
           mouseInteractive={true}
+          paused={!heroInView}
         />
       </div>
-      {/* Dark overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/50"></div>
-      {/* Enhanced overlay for better text readability */}
-      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+      {/* Dark overlay – no backdrop-blur to keep scroll smooth */}
+      <div className="absolute inset-0 bg-black/55 pointer-events-none" aria-hidden />
 
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto max-w-6xl px-4 sm:px-6 text-center relative z-10 pointer-events-auto">
         <div className="animate-fade-in">
           {/* Profile Image */}
           <div className="mb-8 flex justify-center">
