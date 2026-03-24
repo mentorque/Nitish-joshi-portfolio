@@ -32,7 +32,7 @@ const Experience = () => {
       company: "Softel Solutions",
       position: "Software Developer",
       location: "India",
-      duration: "June 2023 – Aug 2024",
+      duration: "Jan 2023 – Aug 2024",
       logo: "SS",
       achievements: [
         {
