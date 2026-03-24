@@ -27,7 +27,7 @@ const About = () => {
     }
   ];
 
-  const summary = `Backend Software Developer with 1+ years of experience contributing to Java-based RESTful systems and relational
+  const summary = `Backend Software Developer with around 2 years of experience contributing to Java-based RESTful systems and relational
   database-driven applications. Experienced in building and maintaining Spring Boot APIs, optimizing MySQL queries, and
   resolving production issues in real-world billing and workflow systems. Strong foundation in object-oriented design, layered
   architecture, and scalable backend development.`;
@@ -40,7 +40,7 @@ const About = () => {
             About <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Me</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Backend Software Developer with 1+ years of experience contributing to Java-based RESTful systems and relational
+            Backend Software Developer with around 2 years of experience contributing to Java-based RESTful systems and relational
             database-driven applications. Experienced in Spring Boot APIs, MySQL optimization, and resolving production issues.
           </p>
         </ScrollReveal>
