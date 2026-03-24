@@ -72,7 +72,7 @@ const Hero = () => {
           </p>
 
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Backend Software Developer with 1+ years of experience contributing to Java-based RESTful systems and relational
+            Backend Software Developer with 2+ years of experience contributing to Java-based RESTful systems and relational
             database-driven applications. Experienced in Spring Boot APIs, optimizing MySQL queries, and resolving production
             issues in real-world billing and workflow systems.
           </p>
@@ -80,7 +80,7 @@ const Hero = () => {
           {/* Contact Info */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 mb-12 text-gray-300">
             <div className="flex items-center gap-2">
-              <span>📧 nitishjoshi04@gmail.com</span>
+              <span>📧 nitish.joshi.dev@gmail.com</span>
             </div>
             <div className="flex items-center gap-2">
               <span>📱 +353 894 980 613</span>
