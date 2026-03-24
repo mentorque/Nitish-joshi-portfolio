@@ -50,7 +50,7 @@ const Contact = () => {
             Let's <span className="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">Connect</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Backend Software Developer with 2+ years of experience in Java-based RESTful systems and Spring Boot.
+            Backend Software Developer with around 2 years of experience in Java-based RESTful systems and Spring Boot.
             Open to new opportunities and exciting projects.
           </p>
         </ScrollReveal>
