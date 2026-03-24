@@ -72,7 +72,7 @@ const Hero = () => {
           </p>
 
           <p className="text-lg text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Backend Software Developer with 2+ years of experience contributing to Java-based RESTful systems and relational
+            Backend Software Developer with around 2 years of experience contributing to Java-based RESTful systems and relational
             database-driven applications. Experienced in Spring Boot APIs, optimizing MySQL queries, and resolving production
             issues in real-world billing and workflow systems.
           </p>
